@@ -19,7 +19,7 @@ l = 0
 values = {}
 List=[]
 V_List=[]
-H_List=[]
+H_List=[0]*8
 
 for j in range(0,3000):
    
@@ -45,15 +45,26 @@ for j in range(0,3000):
 							#if (index /8) == 0:
 							#    print '\n'
 							List.append(byte)
+							y=index%8
+							H_List[y]=H_List[y]+byte
 							if(index/8==7 and index%8==7):
 								v_sum=0
 								for x in range(0,64):
 									print List[x],;
 									v_sum=v_sum+List[x]
 									if(x%8==7):
-										print '\t',v_sum/8
+										print '\n'
+										V_List.append(v_sum/8)
 										v_sum=0
+								for x in range(0,8):
+									H_List[x]=H_List[x]/8
+								print 'H_List',H_List,'\t',max(H_List)
 								List[:]=[]
+								print 'V_List',V_List,'\t',max(V_List)
+								print '(h,v)=(',H_List.index(max(H_List)),',',V_List.index(max(V_List)),')'
+								print '\n'
+								H_List[:]=[0]*8
+								V_List[:]=[]
 							#print index/8, index%8, byte, '\t'
 						
 	newpack = False
