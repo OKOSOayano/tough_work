@@ -29,9 +29,9 @@ nADC=8;
 nIO=8;
 %nIO=12;
 
-%serialPortName = '3'; 
+serialPortName = '3'; 
 %for mac
-serialPortName='M4A9N70S';
+%serialPortName='M4A9N70S';
 %serialPortName='M4A9N746';
 folderSave='../save/';
 
@@ -200,7 +200,7 @@ case 'start',
     %create serial port
     serialPortName=get(hTxtUSBPort,'string');
       
-   pTtyUSB = serial(['/dev/cu.usbserial-',serialPortName]);
+   pTtyUSB = serial(['COM',serialPortName]);
 %     pTtyUSB = serial(['COM',serialPortName]);
     
     pTtyUSB.BaudRate=115200;

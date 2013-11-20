@@ -12,7 +12,7 @@ def convert(byte,s):
             byte = 125
     return byte
 
-s = serial.Serial(port='/dev/tty.usbserial-M4A9N746', baudrate=115200)
+s = serial.Serial(port='COM3', baudrate=115200)
 byte = read_byte(s)
 newpack = False
 l = 0

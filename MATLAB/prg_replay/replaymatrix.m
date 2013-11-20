@@ -15,7 +15,7 @@ labelList=struct('label',...
 
 %load data, format: timestamp, 64 channel data +
 %1byte(255)+1byte(255)+label
-data=load('../save/20130816h14m40.txt');
+data=load('../save/20131113h16m45.txt');
 
 %timestamp
 timeStamp=data(:,1)*3600+data(:,2)*60+data(:,3);
