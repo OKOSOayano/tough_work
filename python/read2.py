@@ -1,3 +1,4 @@
+
 import serial
 
 
@@ -22,7 +23,7 @@ V_List=[]
 H_List=[0]*8
 
 for j in range(0,3000):
-   
+
 	if 126 == byte:
 		if 126 == read_byte(s):
 			if 0 == read_byte(s):
@@ -59,12 +60,13 @@ for j in range(0,3000):
 								for x in range(0,8):
 									H_List[x]=H_List[x]/8
 								print 'H_List',H_List,'\t',max(H_List)
-								List[:]=[]
 								print 'V_List',V_List,'\t',max(V_List)
 								print '(h,v)=(',H_List.index(max(H_List)),',',V_List.index(max(V_List)),')'
 								print '\n'
+								List[:]=[]
 								H_List[:]=[0]*8
 								V_List[:]=[]
+
 							#print index/8, index%8, byte, '\t'
 						
 	newpack = False
